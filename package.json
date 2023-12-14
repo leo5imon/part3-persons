@@ -8,6 +8,8 @@
     "build": "vite build",
     "start": "node index.js",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "build:ui": "rm -rf dist && cd ../frontend && npm run build && cp -r dist ../backend",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
     "preview": "vite preview"
   },
   "dependencies": {
